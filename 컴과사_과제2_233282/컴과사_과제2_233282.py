@@ -12,7 +12,7 @@ from sys import exit
 # - 주차타워의 최대 주차 대수는 5대
 # - 주차타워에 차량 입고 및 출고시 4자리 정수번호로 입력
 # - 주차타워의 차량 기록은 5칸 list([]) 사용
-p_tower = [1]
+p_tower = []
 p_tower_num = len(p_tower)
 
 # 메인기능 출력 및 번호 선택
