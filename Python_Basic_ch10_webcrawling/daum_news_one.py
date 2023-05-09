@@ -40,7 +40,7 @@ result = requests.get(url)
 # requests로 가져온 코드 → BeautifulSoup 접근 가능한 코드로 변경
 doc = BeautifulSoup(result.text, "html.parser")
 title = doc.select("h3.tit_view")[0].get_text()
-contents = doc.select("section > p")  # section 태그 안에 있는 p 태그들
+contents = doc.select("section > Python_Basic_ch10_webcrawling")  # section 태그 안에 있는 Python_Basic_ch10_webcrawling 태그들
 
 print("=" * 100)
 print(f"뉴스제목: {title}")
