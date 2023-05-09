@@ -37,6 +37,7 @@ result = requests.get(url)
 # print(result)
 # print(result.text)
 
+
 # requests로 가져온 코드 → BeautifulSoup 접근 가능한 코드로 변경
 doc = BeautifulSoup(result.text, "html.parser")
 title = doc.select("h3.tit_view")[0].get_text()
