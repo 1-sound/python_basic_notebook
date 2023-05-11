@@ -33,8 +33,8 @@ while True:
     # 조건1. 사용자로부터 입고차량 번호(4자리 정수) 입력 받는 코드 작성
     if main_num == 1:
         while True:
-            car_num = int(input(">> □ 차량번호: "))
-            if (car_num) >= 0 and car_num <= 9999:
+            car_num = input(">> □ 차량번호: ")
+            if (int(car_num)) >= 0 and (int(car_num)) <= 9999:
                 # 조건2. 현재 주차타워의 주차대수가 max(5)인지 확인
                 # 조건3. 주차대수가 max이면 경고문구와 함께 최대허용차량과 현재 입고차량의 숫자를 출력 (예: 최대: 5대, 현재: 5대 / 더 이상 차량을 입고할 수 없습니다)
                 if p_tower_num == 5:
@@ -55,8 +55,8 @@ while True:
     elif main_num == 2:
         # 조건1. 사용자로부터 출고차량 번호(4자리 정수) 입력 받는 코드 작성
         while True:
-            car_num = int(input(">> □ 차량번호: "))
-            if (car_num) >= 0 and car_num <= 9999:
+            car_num = input(">> □ 차량번호: ")
+            if (int(car_num)) >= 0 and (int(car_num)) <= 9999:
                 # 조건2. 사용자가 입력한 차량번호가 현재 주차타워에 주차중인지 확인
                 tf = car_num in p_tower
                 # 조건3. 입력한 출고차량 번호가 주차타워에 존재하지 않으면 "차량이 존재하지 않습니다" 경고 출력
@@ -77,9 +77,16 @@ while True:
     elif main_num == 3:
         # 조건1. 현재 차량의 입고정보를 출력
         # - 출력 예: 1층: 1234, 2층: 1345, 3층: 1234, ...   →   list의 0번인덱스부터 1층으로 판단
-        for floor in range(p_tower_num):
-            print(f"{floor+1}층: {p_tower[floor]}")
-        print("■" * 50)
+        while True:
+            if p_tower_num > 0:
+                for floor in range(p_tower_num):
+                    print(f"{floor+1}층: {p_tower[floor]}")
+                print("■" * 50)
+                break
+            if p_tower_num == 0:
+                print("차량이 존재하지 않습니다.")
+                print("■" * 50)
+                break
 
     # 메인기능 4.프로그램 종료
     elif main_num == 4:
